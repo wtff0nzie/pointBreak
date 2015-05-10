@@ -145,7 +145,6 @@
         fireEventListeners(breakpoint);
         triggerDOMEvent('breakpointChange', doc);
         triggerDOMEvent('breakpointChange-' + breakpoint.replace('-', ''), doc);
-        console.log('breakpointChange-' + breakpoint.replace('-', ''));
     }
 
 

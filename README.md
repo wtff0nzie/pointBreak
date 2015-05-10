@@ -1,5 +1,5 @@
 # pointBreak
-Library agnostic JS responsive design breakpoint detection / eventing.
+Library agnostic JS responsive design breakpoint detection / eventing. Only 873 bytes minified and gzipped!
 
 
 ## Usage
