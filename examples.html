@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>pointBreak usage examples</title>
+    <style>
+        body{
+            color:#555;
+            font-family:sans-serif;
+            font-weight:100;
+            padding:20% 0 0;
+            text-align:center
+        }
+    </style>
+</head>
+<body>
+    <h1>Breakpoint name will appear here as you resize your window.</h1>
+
+    <script src="pointBreak.js"></script>
+    <script>
+        var myNameIs = document.querySelector('h1');
+
+
+        // Show all breakpoint changes
+        document.addEventListener('breakpointChange', function () {
+            myNameIs.innerHTML = pointBreak.get().key;
+        }, true);
+
+
+        // Find onLoad state
+        pointBreak.trigger();
+
+
+        // What is current breakpoint
+        console.log('Current breakpoint is: ' + pointBreak.get());
+
+
+        // Listen for a specific breakpoint change
+        document.addEventListener('breakpointChange-desktop', function () {
+            console.log('We\'re back to desktop size!');
+        }, true);
+
+
+        // Subscribe directly (chainable)
+        var listener = function (evt) {
+            console.log('Listener fired: ' + evt);
+        };
+
+        pointBreak
+            .addListener(listener)
+            .addListener(function (evt) {
+                console.log('2.' + evt);
+            });
+
+
+        // Unsubscribe a listener
+        pointBreak.removeListener(listener);
+    </script>
+</body>
+</html>
