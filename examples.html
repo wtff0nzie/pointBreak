@@ -20,7 +20,7 @@
         var myNameIs = document.querySelector('h1');
 
 
-        // Show all breakpoint changes
+        // Listen to all breakpoint changes
         document.addEventListener('breakpointChange', function () {
             myNameIs.innerHTML = pointBreak.get().key;
         }, true);
@@ -52,7 +52,7 @@
             });
 
 
-        // Unsubscribe a listener
+        // Unsubscribe a listener (chainable)
         pointBreak.removeListener(listener);
     </script>
 </body>
